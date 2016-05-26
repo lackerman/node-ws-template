@@ -1,0 +1,28 @@
+{
+  "name": "node-ws-template",
+  "version": "1.0.0",
+  "description": "NodeJS website template",
+  "main": "app.js",
+  "scripts": {
+    "lint": "eslint **.js",
+    "pretest": "npm run list",
+    "prestart": "npm run lint && webpack",
+    "start": "env $(cat dev.env | xargs) node app.js"
+  },
+  "author": "Leo Ackerman",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "eslint": "^2.10.2",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-plugin-import": "^1.2.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "material-design-lite": "^1.1.3",
+    "style-loader": "^0.13.1",
+    "vue": "^1.0.24",
+    "webpack": "^1.13.1"
+  }
+}
