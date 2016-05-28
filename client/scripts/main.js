@@ -1,7 +1,7 @@
 'use strict';
 
 const Vue = require('vue');
-const request = require('request');
+const request = require('axios');
 
 const main = new Vue({ // eslint-disable-line
   el: '#people',
@@ -14,9 +14,13 @@ const main = new Vue({ // eslint-disable-line
   methods: {
     fetchData() {
       setInterval(() => {
-        request('GET', '/api/v1/people', undefined, (req) => {
-          this.people = JSON.parse(req.responseText);
-        });
+        request
+          .get('/api/v1/people', {
+            responseType: 'json',
+          })
+          .then((res) => {
+            this.people = res.data;
+          });
       }, 1000);
     },
   },
