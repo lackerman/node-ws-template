@@ -14,7 +14,8 @@
   "dependencies": {
     "express": "^4.13.3",
     "spectre.css": "^0.1.23",
-    "vue": "^1.0.24"
+    "vue": "^1.0.24",
+    "request": "lackerman/request#b1eea35"
   },
   "devDependencies": {
     "css-loader": "^0.23.1",

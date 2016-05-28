@@ -1,7 +1,7 @@
 'use strict';
 
 const Vue = require('vue');
-const request = require('./utils');
+const request = require('request');
 
 const main = new Vue({ // eslint-disable-line
   el: '#people',
