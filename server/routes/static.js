@@ -20,7 +20,8 @@ router.get('/', (req, res) => {
   });
 });
 
-router.use('/scripts.js', express.static(`${directory}/dist/scripts.js`));
+router.use('/app.bundle.js', express.static(`${directory}/dist/app.bundle.js`));
+router.use('/vendor.bundle.js', express.static(`${directory}/dist/vendor.bundle.js`));
 router.use('/styles.css', express.static(`${directory}/dist/styles.css`));
 
 module.exports = router;
