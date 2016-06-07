@@ -5,9 +5,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './client/app.js',
+    app: './client/app.jsx',
     vendor: [
-      'vue',
+      'react',
       'axios',
     ],
   },
@@ -19,9 +19,17 @@ module.exports = {
     loaders: [{
       test: /\.css$/,
       loader: ExtractTextPlugin.extract('style-loader', 'css-loader'),
+    }, {
+      test: /\.jsx?$/,
+      loader: 'babel',
+      query: {
+        presets: ['es2015', 'react'],
+      },
+      exclude: /(node_modules)/,
     }],
   },
   resolve: {
+    extensions: ['', '.js', '.jsx'],
     modulesDirectories: ['node_modules'],
   },
   plugins: [
